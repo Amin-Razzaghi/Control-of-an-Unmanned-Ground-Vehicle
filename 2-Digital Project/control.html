@@ -1,0 +1,83 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="../static/bootstrap.min.css">
+</head>
+
+<body style="background-color: wheat">
+	<form id="iform" action="http://localhost:5000/" method="POST">
+		<input type="hidden" id="command" name="command">
+	</form>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	<div class="row justify-content-md-center">
+		<div class="col-1">
+			<input type="button" class="btn btn-primary btn-lg" value="Q" onmousedown="FORWARDLEFT()">
+		</div>
+		<div class="col-1">
+			<input type="button" class="btn btn-primary btn-lg" value="W" onmousedown="FORWARD()">
+		</div>
+		<div class="col-1">
+			<input type="button" class="btn btn-primary btn-lg" value="E" onmousedown="FORWARDRIGHT()">
+		</div>
+	</div>
+	</br>
+	</br>
+	<div class="row justify-content-md-center">
+		<div class="col-1">
+			<input type="button" class="btn btn-primary btn-lg" value="A" onmousedown="LEFT()">
+		</div>
+		<div class="col-1">
+			<input type="button" class="btn btn-danger btn-lg" value="B" onmousedown="STOP()">
+		</div>
+		<div class="col-1 ">
+			<input type="button" class="btn btn-primary btn-lg" value="D" onmousedown="RIGHT()">
+		</div>
+	</div>
+	</br>
+	</br>
+	<div class="row justify-content-md-center">
+		<div class="col-1">
+			<input type="button" class="btn btn-primary btn-lg" value="S" onmousedown="BACKWARD()"
+				onmouseup="NOTHING()">
+		</div>
+	</div>
+	<script>
+		form = document.getElementById("iform");
+		node = document.getElementById("command");
+		function LEFT() {
+			node.value = "A";
+			form.submit();
+		}
+		function RIGHT() {
+			node.value = "D";
+			form.submit();
+		}
+		function BACKWARD() {
+			node.value = "S";
+			form.submit();
+		}
+		function FORWARD() {
+			node.value = "W";
+			form.submit();
+		}
+		function STOP() {
+			node.value = "B";
+			form.submit();
+		}
+		function FORWARDLEFT() {
+			node.value = "Q";
+			form.submit();
+		}
+		function FORWARDRIGHT() {
+			node.value = "E";
+			form.submit();
+		}
+	</script>
+</body>
+
+</html>
